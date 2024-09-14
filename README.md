@@ -1,6 +1,6 @@
 # Test Assessment
 
-Test assessment showcasing an Tavel app based on Next.js.
+Test assessment showcasing an Travel app based on Next.js.
 
 ## Screencast
 You can find deployed version at: https://gogo-test.vercel.app/

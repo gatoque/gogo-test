@@ -32,7 +32,7 @@ const TopNavbar = () => {
             height={20}
             className="mr-1 rounded-full"
           />
-          <p>LT</p>
+          <p>EUR</p>
         </Button>
         <Button variant="unstyled" size="icon">
           <CircleUserRound className="mr-1" />
