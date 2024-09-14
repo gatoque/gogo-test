@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [],
+  content: ["src/app/**/*.{ts,tsx}", "src/components/**/*.{ts,tsx}"],
   theme: {
+    container: {
+      center: true,
+      screens: {
+        "2xl": "1340px",
+      },
+    },
     fontSize: {
       xxs: ["12px", "13.2px"],
       xs: ["13px", "15.6px"],
@@ -16,6 +22,9 @@ module.exports = {
 
     extend: {
       borderRadius: {
+        "3xl": "calc(var(--radius) + 6px)",
+        "2xl": "calc(var(--radius) + 4px)",
+        xl: "calc(var(--radius) + 2px)",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
@@ -61,6 +70,9 @@ module.exports = {
         },
         gray: {
           DEFAULT: "hsl(var(--gray))",
+        },
+        pink: {
+          DEFAULT: "hsl(var(--pink))",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -25,6 +25,7 @@
     --haze: 213 17% 90%;
     --haze-foreground: 273 4% 42%;
     --gray: 212, 14%, 62%;
+    --pink: 329 100% 47%;
     --border: 204 25% 88%;
     --input: 204 25% 88%;
     --ring: 0 0% 3.9%;
@@ -33,7 +34,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.25rem
+    --radius: 0.5rem
   }
   .dark {
     --background: 0 0% 100%;
@@ -65,7 +66,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.25rem
+    --radius: 0.5rem
   }
 }
 
