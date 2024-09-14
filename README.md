@@ -1,10 +1,14 @@
 # Test Assessment
 
-Test assessment showcasing Next.js application.
+Test assessment showcasing an Tavel app based on Next.js.
 
 ## Screencast
+You can find deployed version at: https://gogo-test.vercel.app/
 
-You can find deployed version at:
+
+https://github.com/user-attachments/assets/1da2353b-497a-4161-acc7-b3c07ad7f549
+
+
 
 ## Get Started
 
@@ -13,6 +17,8 @@ Install dependencies:
 ```bash
 npm install
 ```
+
+
 
 Run the development server:
 
