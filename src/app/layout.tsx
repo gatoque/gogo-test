@@ -1,10 +1,45 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
 import Header from "@/components/layouts/Header";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const circularFont = localFont({
+  src: [
+    {
+      path: "../../public/fonts/black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/medium-italic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/book.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/book-italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-circular",
+});
 
 export const metadata: Metadata = {
   title: "GOGO",
@@ -18,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(circularFont.variable)}>
         <Header />
         {children}
       </body>

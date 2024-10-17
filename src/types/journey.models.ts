@@ -3,10 +3,11 @@ type TJourney = {
   image: string;
   country: string;
   city: string;
-  tags: { id: string; label: string; color: string }[];
+  tags: { id: string; label: string; color: string; textColor: string }[];
   rating: {
     score: number;
     reviews: number;
+    reviewed: boolean;
   };
   hotelName: string;
   stars: number;
@@ -15,9 +16,11 @@ type TJourney = {
   nights: number;
   price: {
     currency: string;
+    currencySymbol: string;
     current: number;
     regular: number;
-    discount: number;
+    discountPct: number;
+    highlightDiscount: boolean;
   };
   flightFrom: string;
   likes: number;
