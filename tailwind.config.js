@@ -3,7 +3,11 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["src/app/**/*.{ts,tsx}", "src/components/**/*.{ts,tsx}"],
+  content: [
+    "src/app/**/*.{ts,tsx}",
+    "src/components/**/*.{ts,tsx}",
+    "./node_modules/react-tailwindcss-datepicker/dist/index.esm.{js,ts}",
+  ],
   theme: {
     container: {
       center: true,
@@ -75,6 +79,9 @@ module.exports = {
         },
         pink: {
           DEFAULT: "hsl(var(--pink))",
+        },
+        label: {
+          DEFAULT: "#494F59",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

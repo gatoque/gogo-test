@@ -1,15 +1,29 @@
 import { compose, filter } from "rambda";
 import { useReducer } from "react";
+import { DateValueType } from "react-tailwindcss-datepicker";
 
 import { TJourney } from "@/types/journey.models";
 
-import { onlyAllInclusive, onlyTopStars, onlyWithPool } from "./utils";
+import {
+  filterByDestination,
+  filterByPassengers,
+  filterByTravelDates,
+  onlyAllInclusive,
+  onlyTopStars,
+  onlyWithPool,
+} from "./utils";
 
-type JourneyFilters = {
+export type JourneyFilters = {
   quickFilters: {
     pool: boolean;
     topStars: boolean;
     allInclusive: boolean;
+  };
+  destination: string;
+  travelDates: DateValueType;
+  passengers: {
+    adults: number;
+    childrenAge: number[];
   };
 };
 
@@ -35,10 +49,21 @@ export type HotTicketsAction =
     };
 
 const filterJourneys = (journey: TJourney[], filters: JourneyFilters) =>
-  compose<[TJourney[]], TJourney[], TJourney[], TJourney[]>(
+  compose<
+    [TJourney[]],
+    TJourney[],
+    TJourney[],
+    TJourney[],
+    TJourney[],
+    TJourney[],
+    TJourney[]
+  >(
     filter(onlyAllInclusive.bind(null, filters.quickFilters.allInclusive)),
     filter(onlyWithPool.bind(null, filters.quickFilters.pool)),
-    filter(onlyTopStars.bind(null, filters.quickFilters.topStars))
+    filter(onlyTopStars.bind(null, filters.quickFilters.topStars)),
+    filter(filterByDestination.bind(null, filters.destination)),
+    filter(filterByTravelDates.bind(null, filters.travelDates)),
+    filter(filterByPassengers.bind(null, filters.passengers))
   )(journey);
 
 export const hotTicketsReducer = (
@@ -50,7 +75,7 @@ export const hotTicketsReducer = (
       return {
         ...state,
         filters: action.filters,
-        filteredJourneys: filterJourneys(state.journeys, state.filters),
+        filteredJourneys: filterJourneys(state.journeys, action.filters),
       };
     }
 

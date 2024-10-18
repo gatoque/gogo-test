@@ -9,12 +9,28 @@ import {
 import { Button } from "@/components/ui/button";
 import { TJourney } from "@/types/journey.models";
 
+import { HotTicketsTabs } from "./HotTicketTabs";
 import {
   HotTicketsAction,
   HotTicketsActionType,
   HotTicketsState,
   useHotTicketsReducer,
 } from "./useHotTicketsReducer";
+import { INITIAL_FILTER_VALUES } from "./utils";
+
+type HotTicketsTabsContainerProps = {
+  dispatch?: Dispatch<HotTicketsAction>;
+  state?: HotTicketsState;
+};
+
+const HotTicketsTabsContainer = ({
+  state,
+  dispatch,
+}: HotTicketsTabsContainerProps) => (
+  <div className="mt-[8rem] mb-[11rem] flex justify-center">
+    <HotTicketsTabs state={state} dispatch={dispatch} />
+  </div>
+);
 
 type HotTicketsFiltersProps = {
   dispatch?: Dispatch<HotTicketsAction>;
@@ -88,17 +104,13 @@ const HotTicketsGridClient = ({ journeys }: HotTicketsClientProps) => {
   const [state, dispatch] = useHotTicketsReducer({
     journeys,
     filteredJourneys: journeys,
-    filters: {
-      quickFilters: {
-        pool: false,
-        topStars: false,
-        allInclusive: false,
-      },
-    },
+    filters: INITIAL_FILTER_VALUES,
   });
 
   return (
     <>
+      <HotTicketsTabsContainer state={state} dispatch={dispatch} />
+      <h2 className="text-3xl font-medium mb-4">Paskutine minute</h2>
       <HotTicketsFilters dispatch={dispatch} state={state} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-auto gap-x-8 gap-y-4">
         {state.filteredJourneys.map((journey, idx) => (
@@ -113,7 +125,7 @@ type HotTicketsClientSkeletonProps = {
   items: number;
 };
 
-const HotTicketsGirdSkeleton = ({ items }: HotTicketsClientSkeletonProps) => {
+const HotTicketsGridSkeleton = ({ items }: HotTicketsClientSkeletonProps) => {
   return (
     <>
       <HotTicketsFilters />
@@ -126,4 +138,4 @@ const HotTicketsGirdSkeleton = ({ items }: HotTicketsClientSkeletonProps) => {
   );
 };
 
-export { HotTicketsGirdSkeleton, HotTicketsGridClient };
+export { HotTicketsGridSkeleton, HotTicketsGridClient, HotTicketsTabs };

@@ -140,10 +140,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({
           <div className="flex flex-col justify-end items-end">
             {price.highlightDiscount && (
               <div className="bg-destructive text-destructive-foreground text-xs px-1.5 py-0.5 rounded w-fit">
-                <p className="text-xxs font-bold">
-                  -{price.discountPct}
-                  {price.currencySymbol}
-                </p>
+                <p className="text-xxs font-bold">-{price.discountPct}%</p>
               </div>
             )}
 
