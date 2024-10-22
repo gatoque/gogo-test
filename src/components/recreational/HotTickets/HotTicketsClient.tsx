@@ -1,11 +1,11 @@
 "use client";
-import { Infinity, SlidersHorizontal, Star, Waves } from "lucide-react";
 import { Dispatch } from "react";
 
 import {
   JourneyCard,
   JourneyCardSkeleton,
 } from "@/components/common/cards/JourneyCard";
+import { Icons } from "@/components/common/icons";
 import { Button } from "@/components/ui/button";
 import { TJourney } from "@/types/journey.models";
 
@@ -41,7 +41,7 @@ const HotTicketsFilters = ({ dispatch, state }: HotTicketsFiltersProps) => {
   return (
     <div className="mb-4 flex items-center gap-4">
       <Button variant="destructive-outline">
-        <SlidersHorizontal size={16} className="mr-2" />
+        <Icons.sliderHorizontal className="mr-2" />
         Visi pasiulymai
       </Button>
       <div className="flex gap-2 items-center">
@@ -57,7 +57,7 @@ const HotTicketsFilters = ({ dispatch, state }: HotTicketsFiltersProps) => {
             });
           }}
         >
-          <Waves size={16} className="mr-2" />
+          <Icons.pool className="mr-2" />
           Pool
         </Button>
         <Button
@@ -74,7 +74,7 @@ const HotTicketsFilters = ({ dispatch, state }: HotTicketsFiltersProps) => {
             });
           }}
         >
-          <Infinity size={16} className="mr-2" />
+          <Icons.infinity className="mr-2" />
           All inclusive
         </Button>
         <Button
@@ -89,7 +89,7 @@ const HotTicketsFilters = ({ dispatch, state }: HotTicketsFiltersProps) => {
             });
           }}
         >
-          <Star size={16} className="mr-2" />4 to 5 Stars
+          <Icons.outlinedStar className="mr-2" />4 to 5 Stars
         </Button>
       </div>
     </div>

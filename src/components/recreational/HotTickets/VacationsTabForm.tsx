@@ -56,7 +56,7 @@ export const VacationsTabForm: FC<VacationsTabFormProps> = ({
         {...register("destination")}
       />
 
-      <div className="pl-4 border-l">
+      <div className="py-[3px] pl-4 border-l">
         <Controller
           name="travelDates"
           control={control}
@@ -70,7 +70,7 @@ export const VacationsTabForm: FC<VacationsTabFormProps> = ({
         />
       </div>
 
-      <div className="pl-4 border-l">
+      <div className="py-[3px] pl-4 border-l">
         <Controller
           name="passengers"
           control={control}
@@ -86,9 +86,10 @@ export const VacationsTabForm: FC<VacationsTabFormProps> = ({
 
       <Button
         type="submit"
-        className="px-5 py-4 flex items-center gap-1 rounded-full font-medium text-lg"
+        className="py-0 pr-[28px] pl-[34px] h-[70px] flex items-center rounded-full font-medium text-xl"
       >
-        <Icons.search /> leskoti
+        <Icons.search className="mr-[6px]" />
+        leskoti
       </Button>
     </form>
   );

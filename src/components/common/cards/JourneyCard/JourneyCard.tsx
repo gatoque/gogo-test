@@ -1,9 +1,10 @@
 "use client";
 import { format } from "date-fns";
-import { Heart, Send, Star, ThumbsUp } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
+import { Icons } from "@/components/common/icons";
+import { formatNumeric } from "@/components/recreational/HotTickets/utils";
 import {
   Card,
   CardContent,
@@ -50,7 +51,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({
         }}
       >
         <div className="p-4">
-          <div className="bg-[#0FA5FF] w-fit px-2 py-1.5 rounded-md rounded-bl-none">
+          <div className="bg-[#0FA5FF] w-fit px-2 py-1.5 rounded-lg rounded-bl-none">
             <p className="font-black text-white text-lg">
               {country}, {city}
             </p>
@@ -59,7 +60,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({
             {tags.map((tag) => (
               <div
                 key={tag.id}
-                className="w-fit px-2 py-0.5 first:rounded-tl-md last:rounded-bl-md rounded-r-md"
+                className="w-fit px-2 py-0.5 first:rounded-tl-md last:rounded-bl-md rounded-r-lg"
                 style={{ backgroundColor: tag.color }}
               >
                 <p
@@ -83,7 +84,9 @@ const JourneyCard: React.FC<JourneyCardProps> = ({
               </p>
             )}
             {!!rating.reviews && (
-              <p className="text-sm text-gray">{rating.reviews} reviews</p>
+              <p className="text-sm text-gray">
+                {formatNumeric(rating.reviews)} reviews
+              </p>
             )}
           </div>
         )}
@@ -93,16 +96,14 @@ const JourneyCard: React.FC<JourneyCardProps> = ({
           <div>
             <CardTitle>{hotelName}</CardTitle>
             <div className="flex items-center gap-[5px]">
-              {Array.from({ length: stars }, (_, i) => (
-                <Star
-                  size={14}
-                  key={i}
-                  className="text-yellow-500 fill-yellow-500"
-                />
-              ))}
+              <div className="flex items-center">
+                {Array.from({ length: stars }, (_, i) => (
+                  <Icons.star key={i} />
+                ))}
+              </div>
               {rating.reviewed && (
                 <div className="size-3.5 bg-yellow-500 rounded-sm flex items-center justify-center">
-                  <ThumbsUp size={10} className="text-white fill-white" />
+                  <Icons.thumbsUp />
                 </div>
               )}
             </div>
@@ -126,7 +127,7 @@ const JourneyCard: React.FC<JourneyCardProps> = ({
             <p
               suppressHydrationWarning
               className="font-medium"
-            >{`${format(departureDate, "yyyy-mm-dd")}, - ${nights} nights`}</p>
+            >{`${format(departureDate, "yyyy-mm-dd")}, ${nights} naktys`}</p>
             <p
               className={cn("font-medium", {
                 "text-success": allInclusive,
@@ -162,18 +163,18 @@ const JourneyCard: React.FC<JourneyCardProps> = ({
       <CardFooter className="p-4 mt-auto pt-0 flex justify-between items-end text-xxs">
         <div className="flex justify-between gap-3 items-center">
           <div className="flex w-fit items-center gap-1 text-destructive">
-            <Heart size={14} />
+            <Icons.heart />
             <span>{likes}</span>
           </div>
           <Link
             href="/"
             className="text-xxs flex items-center w-fit border-b pb-[1px] border-primary border-dotted text-primary"
           >
-            <Send size={14} className="text-primary mr-1" />
+            <Icons.share className="mr-1" />
             {shareLabel}
           </Link>
         </div>
-        <div className="text-xxs text-muted-foreground">Guests: {guests}</div>
+        <div className="text-xxs text-muted-foreground">Pries: {guests}</div>
       </CardFooter>
     </Card>
   );

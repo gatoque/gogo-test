@@ -53,7 +53,10 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
-    className={cn("px-6 py-4 bg-white w-full rounded-full", className)}
+    className={cn(
+      "pl-[40px] pr-1 py-[5px] bg-white w-full rounded-full",
+      className
+    )}
     {...props}
   />
 ));

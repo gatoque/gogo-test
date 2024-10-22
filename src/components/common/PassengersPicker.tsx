@@ -75,7 +75,7 @@ const PassengersPicker: React.FC<PassengersPickerProps> = ({
 
   return (
     <Popover.Root onOpenChange={handlePopoverClose}>
-      <Popover.Trigger className="flex flex-col">
+      <Popover.Trigger className="flex flex-col gap-[3px]">
         {!!label?.length && (
           <label className="text-sm text-label cursor-pointer">{label}</label>
         )}
@@ -87,7 +87,7 @@ const PassengersPicker: React.FC<PassengersPickerProps> = ({
           align="start"
           side="bottom"
           avoidCollisions={false}
-          sideOffset={28}
+          sideOffset={22}
           alignOffset={-16}
           className="px-4 py-5 max-w-[23rem] flex flex-col gap-[20px] bg-white rounded-2xl"
         >

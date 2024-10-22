@@ -33,7 +33,7 @@ export const mockJourneys: TJourney[] = [
       "Salia papludimio",
       "3 baseinai",
     ],
-    departureDate: "2024-09-14T09:38:58+0000",
+    departureDate: "2024-09-08T09:10:58+0000",
     nights: 7,
     price: {
       currency: "EUR",
@@ -88,7 +88,7 @@ export const mockJourneys: TJourney[] = [
       "Salia papludimio",
       "3 baseinai",
     ],
-    departureDate: "2024-09-14T09:38:58+0000",
+    departureDate: "2024-09-08T09:10:58+0000",
     nights: 7,
     price: {
       currency: "EUR",
@@ -138,7 +138,7 @@ export const mockJourneys: TJourney[] = [
     hotelName: "Vokietijos sostine - Berlynas",
     stars: 0,
     features: ["Ekskursine programa", "Keliones vadovo paslaugos"],
-    departureDate: "2024-09-14T09:38:58+0000",
+    departureDate: "2024-09-08T09:10:58+0000",
     nights: 3,
     price: {
       currency: "EUR",
@@ -169,7 +169,7 @@ export const mockJourneys: TJourney[] = [
     hotelName: "Smaragdine Slovenija ir kampelis Italijos",
     stars: 0,
     features: ["Ekskursine programa", "Keliones vadovo paslaugos"],
-    departureDate: "2024-09-14T09:38:58+0000",
+    departureDate: "2024-09-08T09:10:58+0000",
     nights: 3,
     price: {
       currency: "EUR",
@@ -219,7 +219,7 @@ export const mockJourneys: TJourney[] = [
       "Salia papludimio",
       "3 baseinai",
     ],
-    departureDate: "2024-09-14T09:38:58+0000",
+    departureDate: "2024-09-08T09:10:58+0000",
     nights: 7,
     price: {
       currency: "EUR",
@@ -269,7 +269,7 @@ export const mockJourneys: TJourney[] = [
       "Salia papludimio",
       "3 baseinai",
     ],
-    departureDate: "2024-09-14T09:38:58+0000",
+    departureDate: "2024-09-08T09:10:58+0000",
     nights: 7,
     price: {
       currency: "EUR",
@@ -300,7 +300,7 @@ export const mockJourneys: TJourney[] = [
     hotelName: "Vokiskoji Saksonijos Svecarija",
     stars: 0,
     features: ["Ekskursine programa", "Keliones vadovo paslaugos"],
-    departureDate: "2024-09-14T09:38:58+0000",
+    departureDate: "2024-09-08T09:10:58+0000",
     nights: 3,
     price: {
       currency: "EUR",
@@ -350,7 +350,7 @@ export const mockJourneys: TJourney[] = [
       "Salia papludimio",
       "3 baseinai",
     ],
-    departureDate: "2024-10-01T09:38:58+0000",
+    departureDate: "2024-10-01T09:10:58+0000",
     nights: 7,
     price: {
       currency: "EUR",

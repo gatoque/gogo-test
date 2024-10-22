@@ -77,3 +77,12 @@ export const filterByPassengers = (
 
   return journey.guests >= totalGuests;
 };
+
+export const formatNumeric = (value: number, precision = 0) => {
+  const factor = Math.pow(10, precision);
+  const roundedValue = Math.round(value * factor) / factor;
+
+  return roundedValue.toLocaleString("en-US", {
+    minimumFractionDigits: precision,
+  });
+};

@@ -1,4 +1,3 @@
-import { CircleUserRound, Heart } from "lucide-react";
 import Link from "next/link";
 
 import { Flags } from "@/components/common/flags";
@@ -24,7 +23,7 @@ const TopNavbar = () => {
       </nav>
       <div className="flex items-center gap-1 text-sm font-medium">
         <Button variant="unstyled" size="icon">
-          <Heart />
+          <Icons.heart className="w-[20px] h-[18px] fill-foreground" />
         </Button>
         <Button variant="unstyled" size="icon">
           <Flags.Lithuania
@@ -35,7 +34,7 @@ const TopNavbar = () => {
           <p>EUR</p>
         </Button>
         <Button variant="unstyled" size="icon">
-          <CircleUserRound className="mr-1" />
+          <Icons.user className="mr-1" />
           Sign in
         </Button>
       </div>

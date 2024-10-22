@@ -9,11 +9,12 @@ interface DatePickerProps extends DatepickerType {
 
 const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>(
   ({ label, ...props }, ref) => (
-    <div ref={ref} className={cn("flex flex-col gap-1")}>
+    <div ref={ref} className={cn("flex flex-col gap-[3px]")}>
       {!!label?.length && <label className="text-sm text-label">{label}</label>}
       <Datepicker
         asSingle={true}
         inputClassName={cn("p-0 font-medium focus:outline-none")}
+        toggleIcon={() => null}
         {...props}
       />
     </div>
